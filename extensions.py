@@ -15,7 +15,7 @@ class Converter:
         try:
             base_key = exchanges[base.lower()]
         except KeyError:
-            return ApiException(f'Валюта {base} не найдена!') #почему здесь return, а ниже raise?
+            raise ApiException(f'Валюта {base} не найдена!') 
         try:
             sym_key = exchanges[sym.lower()]
         except KeyError:
